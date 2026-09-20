@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="theme-color" content="#1677ff">
+  <meta name="description" content="Mobile Dispatch Entry App">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Dispatch Entry</title>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="header-title">
+      <span class="box-icon">📦</span>
+      <span id="pageTitle">New Dispatch Entry</span>
+    </div>
+
+    <button class="home-btn" onclick="showEntryPage()">⌂</button>
+  </header>
+
+
+  <!-- ================= ENTRY PAGE ================= -->
+
+  <main id="entryPage" class="page">
+
+    <div class="card">
+
+      <!-- STORE -->
+      <label>Store Name</label>
+      <input
+        type="text"
+        id="storeName"
+        placeholder="Enter store name"
+      >
+
+      <!-- ADDRESS -->
+      <label>Address</label>
+      <input
+        type="text"
+        id="address"
+        placeholder="Enter address"
+      >
+
+      <!-- PHONE -->
+      <label>Phone</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Enter phone number"
+      >
+
+      <!-- COURIER -->
+      <label>Courier</label>
+
+      <select id="courier">
+        <option value="">Select courier</option>
+        <option>SR Vehicle</option>
+        <option>AJR Courier</option>
+        <option>Karatoa Courier</option>
+        <option>Sundarban Courier</option>
+        <option>Jononi Courier</option>
+        <option>Pathao</option>
+        <option>Steadfast</option>
+        <option>Other</option>
+      </select>
+
+
+      <!-- PRODUCTS -->
+      <label>Products</label>
+
+      <div id="productsContainer"></div>
+
+      <button
+        type="button"
+        class="add-product-btn"
+        onclick="addProduct()"
+      >
+        ＋ Add Product
+      </button>
+
+
+      <!-- NOTE -->
+      <label>Note (Optional)</label>
+
+      <textarea
+        id="note"
+        placeholder="Additional note"
+      ></textarea>
+
+
+      <!-- SAVE -->
+      <button
+        class="save-btn"
+        onclick="saveEntry()"
+      >
+        💾 Save Entry
+      </button>
+
+
+      <!-- HISTORY -->
+      <button
+        class="history-btn"
+        onclick="showHistoryPage()"
+      >
+        📜 View History Records
+      </button>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ================= HISTORY PAGE ================= -->
+
+  <main id="historyPage" class="page hidden">
+
+    <div class="history-card">
+
+      <div class="history-top">
+
+        <button
+          class="back-btn"
+          onclick="showEntryPage()"
+        >
+          ←
+        </button>
+
+        <h2>📜 History Records</h2>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+          type="tel"
+          id="searchPhone"
+          placeholder="Search by phone number"
+          oninput="renderHistory()"
+        >
+
+      </div>
+
+
+      <!-- HISTORY LIST -->
+
+      <div id="historyList"></div>
+
+    </div>
+
+  </main>
+
+
+  <!-- INSTALL BUTTON -->
+
+  <button
+    id="installButton"
+    class="install-btn hidden"
+    onclick="installApp()"
+  >
+    📲 Install App
+  </button>
+
+
+  <!-- TOAST -->
+
+  <div id="toast"></div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

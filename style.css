@@ -1,1 +1,523 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f4f8;
+  color: #3f464d;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* ================= HEADER ================= */
+
+.topbar {
+  background: linear-gradient(135deg, #0878ff, #146be8);
+  color: white;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,.15);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.box-icon {
+  font-size: 25px;
+}
+
+.home-btn {
+  background: transparent;
+  border: none;
+  color: white;
+
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* ================= PAGE ================= */
+
+.page {
+  padding: 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================= CARD ================= */
+
+.card,
+.history-card {
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+
+/* ================= FORM ================= */
+
+label {
+  display: block;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  margin-top: 20px;
+  margin-bottom: 8px;
+
+  color: #4c535a;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  border: 1px solid #d0d5da;
+
+  border-radius: 14px;
+
+  padding: 16px;
+
+  font-size: 17px;
+
+  outline: none;
+
+  background: white;
+
+  transition: .2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1677ff;
+
+  box-shadow: 0 0 0 3px rgba(22,119,255,.10);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.product-row {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.product-row input:first-child {
+  flex: 1.5;
+}
+
+.product-row input:nth-child(2) {
+  flex: .7;
+}
+
+.remove-product {
+  width: 48px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #ffe4e4;
+
+  color: #e53935;
+
+  font-size: 21px;
+
+  cursor: pointer;
+}
+
+
+.add-product-btn {
+  width: 100%;
+
+  border: none;
+
+  background: #0878ff;
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  margin-top: 5px;
+
+  cursor: pointer;
+}
+
+
+/* ================= SAVE ================= */
+
+.save-btn {
+  width: 100%;
+
+  border: none;
+
+  background: #1677ff;
+
+  color: white;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin-top: 25px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(22,119,255,.25);
+}
+
+.save-btn:active,
+.add-product-btn:active,
+.history-btn:active {
+  transform: scale(.98);
+}
+
+
+/* ================= HISTORY BUTTON ================= */
+
+.history-btn {
+  width: 100%;
+
+  border: none;
+
+  background: #515860;
+
+  color: white;
+
+  padding: 17px;
+
+  border-radius: 14px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  margin-top: 35px;
+
+  cursor: pointer;
+}
+
+
+/* ================= HISTORY ================= */
+
+.history-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.history-top h2 {
+  font-size: 21px;
+}
+
+.back-btn {
+  border: none;
+
+  background: #eef3f8;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+.search-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid #d0d5da;
+
+  border-radius: 14px;
+
+  padding: 0 12px;
+
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  border: none;
+
+  box-shadow: none;
+
+  padding-left: 5px;
+}
+
+
+/* ================= HISTORY ITEM ================= */
+
+.history-item {
+  border: 1px solid #dce2e8;
+
+  border-radius: 16px;
+
+  padding: 15px;
+
+  margin-bottom: 15px;
+
+  background: #fff;
+}
+
+.history-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.store-title {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #263746;
+}
+
+.date {
+  font-size: 12px;
+
+  color: #777;
+}
+
+.history-info {
+  line-height: 1.8;
+
+  font-size: 15px;
+}
+
+.product-list {
+  background: #f0f6ff;
+
+  border-radius: 10px;
+
+  padding: 10px;
+
+  margin-top: 10px;
+}
+
+.product-line {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 5px 0;
+
+  border-bottom: 1px solid #dce8f7;
+}
+
+.product-line:last-child {
+  border-bottom: none;
+}
+
+
+/* ================= EDIT DELETE ================= */
+
+.action-buttons {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+
+  border: none;
+
+  color: white;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #0878ff;
+}
+
+.delete-btn {
+  background: #e53935;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty-history {
+  text-align: center;
+
+  padding: 45px 10px;
+
+  color: #777;
+}
+
+
+/* ================= INSTALL ================= */
+
+.install-btn {
+  position: fixed;
+
+  bottom: 18px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 36px);
+
+  max-width: 500px;
+
+  background: #0878ff;
+
+  color: white;
+
+  border: none;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+
+  z-index: 100;
+}
+
+
+/* ================= TOAST ================= */
+
+#toast {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  background: #263238;
+
+  color: white;
+
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  display: none;
+
+  z-index: 200;
+
+  max-width: 90%;
+
+  text-align: center;
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 430px) {
+
+  .topbar {
+    height: 64px;
+  }
+
+  .header-title {
+    font-size: 19px;
+  }
+
+  .card,
+  .history-card {
+    padding: 16px;
+  }
+
+  .product-row input {
+    padding: 13px 10px;
+    font-size: 15px;
+  }
+
+  .remove-product {
+    width: 42px;
+  }
+}
